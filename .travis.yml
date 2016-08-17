@@ -1,0 +1,13 @@
+os: linux
+language: c
+compiler: gcc
+env:
+  global:
+    - MAKEJOBS=-j3
+    - RUN_TESTS=false
+    - CCACHE_SIZE=100M
+    - CCACHE_TEMPDIR=/tmp/.ccache-temp
+    - CCACHE_COMPRESS=1
+    - BASE_OUTDIR=$TRAVIS_BUILD_DIR/out
+script:
+- ./build_cherryk.sh
